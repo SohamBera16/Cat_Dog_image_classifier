@@ -104,4 +104,4 @@ acc = history.history['accuracy']
 print(acc)
 
 model.save("dogs_vs_cats.h5")  # we can save the model and reload it at anytime in the future
-new_model = tf.keras.models.load_model('dogs_vs_cats.h5'
+new_model = tf.keras.models.load_model('dogs_vs_cats.h5') #This model can be used further for making predictions on new image data
