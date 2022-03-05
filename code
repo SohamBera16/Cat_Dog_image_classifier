@@ -16,7 +16,7 @@ tfds.disable_progress_bar()
 )
 get_label_name = metadata.features['label'].int2str  # creates a function object that we can use to get labels
 
-# display 5 images from the dataset
+# display five images from the dataset
 for image, label in raw_train.take(5):
   plt.figure()
   plt.imshow(image)
@@ -57,7 +57,7 @@ for img, label in train.take(2):
 
 IMG_SHAPE = (IMG_SIZE, IMG_SIZE, 3)
 
-# Create the base model from the pre-trained model MobileNet V2
+# Create the base model from the pre-trained MobileNet V2 model
 base_model = tf.keras.applications.MobileNetV2(input_shape=IMG_SHAPE,
                                                include_top=False,
                                                weights='imagenet')
@@ -94,7 +94,7 @@ validation_steps=20
 
 loss0,accuracy0 = model.evaluate(validation_batches, steps = validation_steps)
 
-# Now we can train it on our images
+#Training the model on our images
 history = model.fit(train_batches,
                     epochs=initial_epochs,
                     validation_data=validation_batches)
